@@ -35,13 +35,19 @@ const Component = () => {
           {(toogleMenu || screenWidth > 576) && (
             <ul className={styles.list}>
               <Link to="/onas">
-                <li className={styles.items}>o nas</li>
+                <li onClick={toogleNav} className={styles.items}>
+                  o nas
+                </li>
               </Link>
               <Link to="/oferta">
-                <li className={styles.items}>oferta</li>
+                <li onClick={toogleNav} className={styles.items}>
+                  oferta
+                </li>
               </Link>
               <Link to="/kontakt">
-                <li className={styles.items}>kontakt</li>
+                <li onClick={toogleNav} className={styles.items}>
+                  kontakt
+                </li>
               </Link>
             </ul>
           )}

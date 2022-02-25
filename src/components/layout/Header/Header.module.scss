@@ -18,6 +18,12 @@ nav {
   height: 80px;
   // background: linear-gradient(90deg, #FADBD9 1.5%, #B9E3F6 100%);
   // border-radius: 41px;
+  li {
+    transition: color 0.3s ease;
+  }
+  li:hover{
+    font-size: 24px;
+  }
 }
 
 .list {
@@ -32,6 +38,7 @@ nav {
 
   a{
     text-decoration: none;
+    width: 100%;
   }
 }
 .items {
@@ -51,6 +58,7 @@ nav {
   padding: 5px;
   color: #000;
   font-size: 18px;
+  
 }
 
 @media screen and (max-width: 1200px) {
@@ -74,6 +82,11 @@ nav {
     right: 0;
     text-align: center;
     background: none;
+    margin-top: 45px;
+    li:hover{
+      font-size: 40px;
+    }
+
   }
 
   .items {
@@ -93,4 +106,5 @@ nav {
   .logo img {
     padding-left: 140px;
   }
+
 }

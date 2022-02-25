@@ -1,4 +1,23 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  margin: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .root {
+    flex-direction: column;
+    align-items: center;
+
+    p{
+      width: 281px;
+      text-align: center;
+    }
+  }
+}
