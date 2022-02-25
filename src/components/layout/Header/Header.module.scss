@@ -1,4 +1,96 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  margin: 50px 0;
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+nav {
+  top: 0;
+  width: 100%;
+  height: 80px;
+  // background: linear-gradient(90deg, #FADBD9 1.5%, #B9E3F6 100%);
+  // border-radius: 41px;
+}
+
+.list {
+  list-style-type: none;
+  background: linear-gradient(90deg, #fadbd9 1.5%, #b9e3f6 100%);
+  border-radius: 41px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  a{
+    text-decoration: none;
+  }
+}
+.items {
+  margin-right: 20px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #235493;
+  cursor: pointer;
+}
+
+.btn {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  padding: 5px;
+  color: #000;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1200px) {
+  .rightnav {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .list {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: none;
+  }
+
+  .items {
+    width: 100%;
+    border-top: 1px solid rgb(255, 255, 255);
+    background: linear-gradient(90deg, #fadbd9 1.5%, #b9e3f6 100%);
+    border-radius: 41px;
+    text-align: center;
+    margin-right: 0px;
+    font-size: 30px;
+    padding:  10px 0 15px 0;
+  }
+  .btn {
+    display: block;
+  }
+
+  .logo img {
+    padding-left: 140px;
+  }
+}

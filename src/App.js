@@ -1,3 +1,5 @@
+import './styles/bootstrap.scss';
+import './styles/global.scss';
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
