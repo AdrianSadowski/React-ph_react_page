@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Homepage.module.scss';
-import { MenuButton } from '../../common/MenuButton/MenuButton';
+import {MenuButton} from '../../common/MenuButton/MenuButton';
 
 const Component = ({children}) => (
   <div className={styles.root}>
@@ -13,9 +13,8 @@ const Component = ({children}) => (
 
 Component.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
-
 
 export {
   Component as Homepage,

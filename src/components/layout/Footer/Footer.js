@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import logo from '../../../images/logo.png';
 import {Link} from 'react-router-dom';
 
 import styles from './Footer.module.scss';
 
-const Component = ({children}) => (
+const Component = () => (
   <div className={styles.root}>
     <Link className={styles.left} to="/">
       <img src={logo} alt="Logo" />
@@ -35,9 +34,6 @@ const Component = ({children}) => (
   </div>
 );
 
-Component.propTypes = {
-  children: PropTypes.node,
-};
 
 export {
   Component as Footer,
