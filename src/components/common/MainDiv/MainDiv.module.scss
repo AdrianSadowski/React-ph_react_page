@@ -1,0 +1,70 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  white-space: pre-line;
+  background: $backround-div-color;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .left {
+    width: 650px;
+
+    .title {
+      font-weight: bold;
+      font-size: 70px;
+      line-height: 85px;
+      text-transform: lowercase;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .root {
+    height: 400px;
+
+    img {
+      height: 400px;
+    }
+
+    .left {
+      width: 400px ;
+      .title {
+      font-size: 45px;
+      line-height: 55px;
+      }
+      .subtitle {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    flex-direction: column;
+    height: 530px;
+    img {
+      height: 330px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .root {
+    .left {
+      width: 270px;
+    }
+
+    img {
+      height: 230px;
+    }
+  }
+}
