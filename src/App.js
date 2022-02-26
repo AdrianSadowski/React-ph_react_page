@@ -1,6 +1,6 @@
 import './styles/bootstrap.scss';
 import './styles/global.scss';
-import React, {useState} from 'react';
+import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import {MainLayout} from './components/layout/MainLayout/MainLayout';
@@ -9,18 +9,15 @@ import {Contact} from './components/views/Contact/Contact';
 import {Homepage} from './components/views/Homepage/Homepage';
 import {NotFound} from './components/views/NotFound/NotFound';
 import {Offert} from './components/views/Offert/Offert';
-import { homepageData } from './data/dataStore';
 
 
 const App = () => {
-  const [hompageContent] = useState(homepageData);
-  console.log(hompageContent);
 
   return(
   <BrowserRouter>
     <MainLayout>
       <Switch>
-        <Route exact path="/" component={Homepage} homepageData={hompageContent}/>
+        <Route exact path="/" component={Homepage} />
         <Route exact path="/onas" component={AboutUs} />
         <Route exact path="/oferta" component={Offert} />
         <Route exact path="/kontakt" component={Contact} />

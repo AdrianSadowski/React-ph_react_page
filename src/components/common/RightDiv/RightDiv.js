@@ -4,16 +4,17 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Component = ({title, subtitle, image, buttonTo}) => {
-  console.log(buttonTo)
   return (
     <div className={styles.root}>
       <div className={styles.left}>
         <div className={styles.leftSide}>
           <p className={styles.title}>{title}</p>
           <p className={styles.subtitle}>{subtitle} </p>
-          <Link className={styles.button} to={buttonTo}>
+          {buttonTo ? (
+            <Link className={styles.button} to={buttonTo}>
             <p>więcej</p>
           </Link>
+            ) : null}
         </div>
       </div>
       <div className={styles.right}>
