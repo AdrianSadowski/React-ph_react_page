@@ -6,7 +6,7 @@ import styles from './Contact.module.scss';
 const Component = ({children}) => (
   <div className={styles.root}>
     <h2>Contact</h2>
-    {children}
+    <img src='assets/brandingipakowanie.png' />
   </div>
 );
 

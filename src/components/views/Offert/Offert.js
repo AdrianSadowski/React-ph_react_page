@@ -1,37 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { MainDiv } from '../../common/MainDiv/MainDiv';
-import IMGoferta from '../../../images/oferta.png';
-
+import DefaultSection from '../../common/DefaultSection/DefaultSection';
+import MainSection from '../../common/MainSection/MainSection';
+import {config, main} from './Config.js'
 import styles from './Offert.module.scss';
 
-const Component = ({children}) => {
-  const ofertaData = {
-    mainDivContent: {
-      title: 'nasza \n oferta',
-      subtitle:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      image: IMGoferta,
-    },
-  };
+const Offert = () => {
   return (
     <div className={styles.root}>
-      <MainDiv
-        title={ofertaData.mainDivContent.title}
-        subtitle={ofertaData.mainDivContent.subtitle}
-        image={ofertaData.mainDivContent.image}
-      />
+      <MainSection {...main} />
+      {config.map((elementConfig, index) => (
+        <DefaultSection key={index} {...elementConfig} />
+      ))}
     </div>
   );
 };
 
-Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
 
-export {
-  Component as Offert,
-  // Container as Offert,
-  Component as OffertComponent,
-};
+export default Offert;
+
+

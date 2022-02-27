@@ -1,15 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import logo from '../../../images/logo.png';
 import {Link} from 'react-router-dom';
 
 import styles from './Header.module.scss';
 
-const Component = () => {
+const Header = () => {
   const [toogleMenu, setToogleMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const toogleNav = () => {
     setToogleMenu(!toogleMenu);
+  };
+  const toogleNavFalse = () => {
+    setToogleMenu(false);
   };
 
   useEffect(() => {
@@ -27,8 +29,8 @@ const Component = () => {
     <div className="row">
       <div className="col-lg-7 row">
         <div className={'col-6 ' + styles.logo}>
-          <Link to="/">
-            <img src={logo} alt="Logo" />
+          <Link onClick={toogleNavFalse} to="/">
+            <img src='assets/logo.png' alt="Logo" />
           </Link>
         </div>
         <nav className={'col-6 ' + styles.root}>
@@ -61,10 +63,4 @@ const Component = () => {
   );
 };
 
-Component.propTypes = {};
-
-export {
-  Component as Header,
-  // Container as Header,
-  Component as HeaderComponent,
-};
+export default Header;

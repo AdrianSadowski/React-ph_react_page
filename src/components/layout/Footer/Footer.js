@@ -1,20 +1,21 @@
 import React from 'react';
-import logo from '../../../images/logo.png';
 import {Link} from 'react-router-dom';
 
 import styles from './Footer.module.scss';
 
-const Component = () => (
+const Footer = () => (
+  <>
+  <div className={styles.pasek}></div>
   <div className={styles.root}>
-    <Link className={styles.left} to="/">
-      <img src={logo} alt="Logo" />
+    <Link className={styles.logo} to="/">
+      <img src='assets/logo.png' alt="Logo" />
     </Link>
-    <p className={styles.middle}>
+    <p className={styles.phone}>
       +48 508 268 629
       <br />
       biuro@prospecthouse.pl
     </p>
-    <p className={styles.right}>
+    <p className={styles.companyInfo}>
       PROSPECT HOUSE
       <br />
       Tomasz Kowalski
@@ -32,11 +33,8 @@ const Component = () => (
       17 1500 1012 1010 1016 6077 0000
     </p>
   </div>
+  </>
 );
 
 
-export {
-  Component as Footer,
-  // Container as Footer,
-  Component as FooterComponent,
-};
+export default Footer;

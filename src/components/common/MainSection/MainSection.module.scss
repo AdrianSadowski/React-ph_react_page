@@ -7,9 +7,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 
   .left {
     width: 650px;
+    padding-left: 20px;
 
     .title {
       font-weight: bold;
@@ -33,10 +35,10 @@
     }
 
     .left {
-      width: 400px ;
+      width: 400px;
       .title {
-      font-size: 45px;
-      line-height: 55px;
+        font-size: 45px;
+        line-height: 55px;
       }
       .subtitle {
         font-size: 16px;
@@ -46,21 +48,42 @@
   }
 }
 
+@media screen and (max-width: 960px) {
+  .root {
+    max-height: 500px;
+    height: 100%;
+    img {
+      height: 350px;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .root {
     flex-direction: column;
-    height: 530px;
+    max-height: 800px;
+    height: 100%;
+    .right {
+      position: absolute;
+    }
     img {
       height: 330px;
+      opacity: 0.2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
     }
   }
-
 }
 
 @media screen and (max-width: 576px) {
   .root {
+    text-align: center;
+    max-height: 800px;
+    height: 100%;
     .left {
-      width: 270px;
+      width: 100%;
     }
 
     img {
