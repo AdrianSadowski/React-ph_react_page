@@ -1,23 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
+import FormContact from '../../common/FormContact/FormContact';
+import {config} from './Config.js';
 import styles from './Contact.module.scss';
 
-const Component = ({children}) => (
-  <div className={styles.root}>
-    <h2>Contact</h2>
-    <img src='assets/brandingipakowanie.png' />
-  </div>
-);
-
-Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string
+const Contact = () => {
+  const {title, subtitle, image} = config;
+  return (
+    <div className={styles.root}>
+      <div className={styles.contact_left}>
+        <div className={styles.description}>
+          <p className={styles.title}>{title}</p>
+          <p className={styles.subtitle}>{subtitle} </p>
+        </div>
+        <FormContact />
+      </div>
+      <div className={styles.image}>
+        <img src={image} alt={title} />
+      </div>
+    </div>
+  );
 };
 
-
-export {
-  Component as Contact,
-  // Container as Contact,
-  Component as ContactComponent,
-};
+export default Contact;

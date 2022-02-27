@@ -5,7 +5,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import {MainLayout} from './components/layout/MainLayout/MainLayout';
 import {AboutUs} from './components/views/AboutUs/AboutUs';
-import {Contact} from './components/views/Contact/Contact';
+import Contact from './components/views/Contact/Contact';
 import Homepage from './components/views/Homepage/Homepage';
 import NotFound from './components/views/NotFound/NotFound';
 import Offert from './components/views/Offert/Offert';

@@ -1,5 +1,31 @@
 @import '../../../styles/settings.scss';
 
 .root {
-  text-align: right;
+  background: $backround-div-color;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  white-space: pre-line;
+  .contact_left {
+    margin-left: 60px;
+    margin-top: 60px;
+    max-width: 700px;
+
+    .description{
+      margin-bottom: 60px;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 70px;
+      line-height: 85px;
+      text-transform: lowercase;
+    }
+    .subtitle {
+      font-size: 14px;
+      line-height: 17px;
+    }
+    
+  }
 }
