@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './Header.module.scss';
 
@@ -36,26 +38,25 @@ const Header = () => {
         <nav className={'col-6 ' + styles.root}>
           {(toogleMenu || screenWidth > 576) && (
             <ul className={styles.list}>
-              <Link to="/onas">
-                <li onClick={toogleNav} className={styles.items}>
+              <Link to="/onas" className={styles.items} onClick={toogleNav} >
+                <li>
                   o nas
                 </li>
               </Link>
-              <Link to="/oferta">
-                <li onClick={toogleNav} className={styles.items}>
+              <Link to="/oferta" className={styles.items} onClick={toogleNav} >
+                <li>
                   oferta
                 </li>
               </Link>
-              <Link to="/kontakt">
-                <li onClick={toogleNav} className={styles.items}>
+              <Link to="/kontakt" onClick={toogleNav} className={styles.items}>
+                <li>
                   kontakt
                 </li>
               </Link>
             </ul>
           )}
-          <button onClick={toogleNav} className={styles.btn}>
-            BTN
-          </button>
+          <FontAwesomeIcon onClick={toogleNav} className={styles.btn} icon={faBars} />
+
         </nav>
       </div>
       <div className={'col-lg-5 ' + styles.rightnav}></div>
