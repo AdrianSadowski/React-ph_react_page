@@ -5,7 +5,7 @@ import './FormContact.scss';
 const FormContact = () => {
   return (
     <form>
-      <div class="box">
+      <div className="box">
         <label>
           <span>Imię i Nazwisko</span>
           <input type="text" id="name" minLength="3" maxLength="35"required/>
