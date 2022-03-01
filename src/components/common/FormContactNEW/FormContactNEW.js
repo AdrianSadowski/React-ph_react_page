@@ -10,13 +10,19 @@ const FormContactNEW = () => {
     handleSubmit,
     formState: {errors},
   } = useForm();
-  const onSubmit = data => console.log(data);
+  function onChange(value) {
+    console.log('Captcha value:', value);
+  }
+  const onSubmit = data => {
+    if (onChange.value) {
+      console.log(data);
+    } else {
+      console.log('Brak autoryzacji');
+    }
+  };
   console.log(errors);
 
-  function onChange(value) {
-    console.log("Captcha value:", value);
-  }
-  const recaptchaRef = React.createRef();
+  const inputErrorInfo = 'Proszę wypełnić powyższe pole';
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -24,35 +30,37 @@ const FormContactNEW = () => {
         <label>
           <span>Imię i Nazwisko</span>
           <input type="text" {...register('Name', {required: true, maxLength: 80})} />
+          {errors.Name?.type === 'required' && inputErrorInfo}
+          {/* Do poprawy errory :) aby nie trzeba tyle pisac tego samego*/}
         </label>
         <label>
           <span>E-mail</span>
           <input type="text" {...register('Email', {required: true, pattern: /^\S+@\S+$/i})} />
+          {errors.Email?.type === 'required' && inputErrorInfo}
         </label>
         <label>
           <span>Numer telefonu</span>
           <input
             type="tel"
-            {...register('Mobile number', {required: true, minLength: 6, maxLength: 12})}
+            {...register('Mobile', {required: true, minLength: 6, maxLength: 12})}
           />
+          {errors.Mobile?.type === 'required' && inputErrorInfo}
         </label>
         <label>
           <span>temat wiadomości</span>
           <input type="text" {...register('Tittle', {required: true, maxLength: 100})} />
+          {errors.Tittle?.type === 'required' && inputErrorInfo}
         </label>
         <label>
           <span>treść wiadomości</span>
           <textarea {...register('Message', {required: true, maxLength: 1000})} />
+          {errors.Message?.type === 'required' && inputErrorInfo}
         </label>
         <div className="sendForm">
           <label className="veryfication">
             <span>weryfikacja</span>
             <div className="google-captha">
-              <ReCAPTCHA 
-                ref={recaptchaRef}
-                sitekey= '6Lf_yKgeAAAAABkoFCKyJO01ietAV531d_9yJdrF'
-                onChange={onChange} 
-              />,
+              <ReCAPTCHA sitekey="6Lf_yKgeAAAAABkoFCKyJO01ietAV531d_9yJdrF" onChange={onChange} />,
             </div>
           </label>
           <div className="formButtons">
