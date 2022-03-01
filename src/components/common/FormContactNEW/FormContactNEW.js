@@ -16,7 +16,10 @@ const FormContactNEW = () => {
   const onSubmit = data => {
     if (onChange.value) {
       console.log(data);
+      // jeślli jest wszystko ok to wysyłamy maila :)
     } else {
+      //jeśli brak autoryzacji reCAPTCHA
+      alert('Brak weryfikacji');
       console.log('Brak autoryzacji');
     }
   };
