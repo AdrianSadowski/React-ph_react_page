@@ -27,14 +27,42 @@ const FormContactNEW = () => {
 
   const inputErrorInfo = 'Proszę wypełnić powyższe pole';
 
+  const fields = [
+    {
+      nazwa: 'Imię i Nazwisko',
+      type: 'text',
+      validSettings: `{...register('Name', {required: true, maxLength: 80})}`,
+      validError: `{errors.Name?.type === 'required' && inputErrorInfo}`,
+    },
+    {
+      nazwa: 'Imię i Nazwisko',
+      type: 'text',
+      validSettings: `{...register('Name', {required: true, maxLength: 80})}`,
+      validError: `{errors.Name?.type === 'required' && inputErrorInfo}`,
+    },
+    {
+      nazwa: 'Imię i Nazwisko',
+      type: 'text',
+      validSettings: `{...register('Name', {required: true, maxLength: 80})}`,
+      validError: `{errors.Name?.type === 'required' && inputErrorInfo}`,
+    },
+  ];
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="box">
-        <label>
+        {fields.map((field, index) => (
+          <label key={index}>
+            <span>{field.name}</span>
+            <input type={field.type} {...field.validSettings} />
+            {/* {... field.validError} */}
+          </label>
+        ))}
+        {/* <label>
           <span>Imię i Nazwisko</span>
           <input type="text" {...register('Name', {required: true, maxLength: 80})} />
           {errors.Name?.type === 'required' && inputErrorInfo}
-          {/* Do poprawy errory :) aby nie trzeba tyle pisac tego samego*/}
+          Do poprawy errory :) aby nie trzeba tyle pisac tego samego
         </label>
         <label>
           <span>E-mail</span>
@@ -53,7 +81,7 @@ const FormContactNEW = () => {
           <span>temat wiadomości</span>
           <input type="text" {...register('Tittle', {required: true, maxLength: 100})} />
           {errors.Tittle?.type === 'required' && inputErrorInfo}
-        </label>
+        </label> */}
         <label>
           <span>treść wiadomości</span>
           <textarea {...register('Message', {required: true, maxLength: 1000})} />
