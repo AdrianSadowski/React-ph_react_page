@@ -1,21 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 import './FormContactNEW.scss';
 
 const FormContactNEW = () => {
+  const [captha, setCaptcha] = useState(false);
   const {
     register,
     handleSubmit,
     formState: {errors},
   } = useForm();
-  function onChange(value) {
-    console.log('Captcha value:', value);
-  }
   const onSubmit = data => {
-    if (onChange.value) {
-      console.log(data);
+    console.log(data);
+
+    if (captha === true) {
+      console.log('pozytywnie wysyłamy', captha);
+    
       // jeślli jest wszystko ok to wysyłamy maila :)
     } else {
       //jeśli brak autoryzacji reCAPTCHA
@@ -23,46 +24,17 @@ const FormContactNEW = () => {
       console.log('Brak autoryzacji');
     }
   };
-  console.log(errors);
 
   const inputErrorInfo = 'Proszę wypełnić powyższe pole';
 
-  const fields = [
-    {
-      nazwa: 'Imię i Nazwisko',
-      type: 'text',
-      validSettings: `{...register('Name', {required: true, maxLength: 80})}`,
-      validError: `{errors.Name?.type === 'required' && inputErrorInfo}`,
-    },
-    {
-      nazwa: 'Imię i Nazwisko',
-      type: 'text',
-      validSettings: `{...register('Name', {required: true, maxLength: 80})}`,
-      validError: `{errors.Name?.type === 'required' && inputErrorInfo}`,
-    },
-    {
-      nazwa: 'Imię i Nazwisko',
-      type: 'text',
-      validSettings: `{...register('Name', {required: true, maxLength: 80})}`,
-      validError: `{errors.Name?.type === 'required' && inputErrorInfo}`,
-    },
-  ];
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="box">
-        {fields.map((field, index) => (
-          <label key={index}>
-            <span>{field.name}</span>
-            <input type={field.type} {...field.validSettings} />
-            {/* {... field.validError} */}
-          </label>
-        ))}
-        {/* <label>
+        <label>
           <span>Imię i Nazwisko</span>
           <input type="text" {...register('Name', {required: true, maxLength: 80})} />
           {errors.Name?.type === 'required' && inputErrorInfo}
-          Do poprawy errory :) aby nie trzeba tyle pisac tego samego
         </label>
         <label>
           <span>E-mail</span>
@@ -81,7 +53,7 @@ const FormContactNEW = () => {
           <span>temat wiadomości</span>
           <input type="text" {...register('Tittle', {required: true, maxLength: 100})} />
           {errors.Tittle?.type === 'required' && inputErrorInfo}
-        </label> */}
+        </label>
         <label>
           <span>treść wiadomości</span>
           <textarea {...register('Message', {required: true, maxLength: 1000})} />
@@ -91,7 +63,11 @@ const FormContactNEW = () => {
           <label className="veryfication">
             <span>weryfikacja</span>
             <div className="google-captha">
-              <ReCAPTCHA sitekey="6Lf_yKgeAAAAABkoFCKyJO01ietAV531d_9yJdrF" onChange={onChange} />,
+              <ReCAPTCHA
+                sitekey="6Lf_yKgeAAAAABkoFCKyJO01ietAV531d_9yJdrF"
+                onChange={e => setCaptcha(!captha)}
+                onExpired={e => setCaptcha(false)}
+              />,
             </div>
           </label>
           <div className="formButtons">

@@ -13,8 +13,8 @@ const Contact = () => {
           <p className={styles.title}>{title}</p>
           <p className={styles.subtitle}>{subtitle} </p>
         </div>
-        <FormContact />
-        <h3>OPCJA 2</h3>
+        {/* <FormContact />
+        <h3>OPCJA 2</h3> */}
         <FormContactNEW />
       </div>
       <div className={styles.image}>
