@@ -1,5 +1,4 @@
 import React from 'react';
-import FormContact from '../../common/FormContact/FormContact';
 import FormContactNEW from '../../common/FormContactNEW/FormContactNEW';
 import {config} from './Config.js';
 import styles from './Contact.module.scss';
@@ -13,8 +12,7 @@ const Contact = () => {
           <p className={styles.title}>{title}</p>
           <p className={styles.subtitle}>{subtitle} </p>
         </div>
-        {/* <FormContact />
-        <h3>OPCJA 2</h3> */}
+
         <FormContactNEW />
       </div>
       <div className={styles.image}>

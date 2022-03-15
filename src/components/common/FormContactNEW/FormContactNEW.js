@@ -20,7 +20,7 @@ const FormContactNEW = () => {
       // jeślli jest wszystko ok to wysyłamy maila :)
     } else {
       //jeśli brak autoryzacji reCAPTCHA
-      alert('Brak weryfikacji');
+      alert('Brak weryfikacji reCAPTHA');
       console.log('Brak autoryzacji');
     }
   };
@@ -34,12 +34,12 @@ const FormContactNEW = () => {
         <label>
           <span>Imię i Nazwisko</span>
           <input type="text" {...register('Name', {required: true, maxLength: 80})} />
-          {errors.Name?.type === 'required' && inputErrorInfo}
+          {errors.Name && inputErrorInfo}
         </label>
         <label>
           <span>E-mail</span>
           <input type="text" {...register('Email', {required: true, pattern: /^\S+@\S+$/i})} />
-          {errors.Email?.type === 'required' && inputErrorInfo}
+          {errors.Email && inputErrorInfo}
         </label>
         <label>
           <span>Numer telefonu</span>
@@ -47,17 +47,17 @@ const FormContactNEW = () => {
             type="tel"
             {...register('Mobile', {required: true, minLength: 6, maxLength: 12})}
           />
-          {errors.Mobile?.type === 'required' && inputErrorInfo}
+          {errors.Mobile && inputErrorInfo}
         </label>
         <label>
           <span>temat wiadomości</span>
           <input type="text" {...register('Tittle', {required: true, maxLength: 100})} />
-          {errors.Tittle?.type === 'required' && inputErrorInfo}
+          {errors.Tittle && inputErrorInfo}
         </label>
         <label>
           <span>treść wiadomości</span>
           <textarea {...register('Message', {required: true, maxLength: 1000})} />
-          {errors.Message?.type === 'required' && inputErrorInfo}
+          {errors.Message && inputErrorInfo}
         </label>
         <div className="sendForm">
           <label className="veryfication">
