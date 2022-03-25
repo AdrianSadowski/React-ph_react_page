@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import FormContactNEW from '../../common/FormContactNEW/FormContactNEW';
 import {config} from './Config.js';
 import styles from './Contact.module.scss';
 
 const Contact = () => {
   const {title, subtitle, image} = config;
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className={styles.root}>
       <div className={styles.contact_left}>
