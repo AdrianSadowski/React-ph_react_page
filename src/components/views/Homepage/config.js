@@ -1,15 +1,13 @@
 export const config = [
   {
     title: `kim \n jesteśmy`,
-    subtitle:
-      'Gadżeciarzami. Od ponad 10 lat zajmujemy się wpieraniem naszych klientów w projektowaniu, doradztwie, wdrażaniu i obsłudze programów lojalnościowych i motywacyjnych.  Uwielbiamy technologiczne nowinki, pomysły z branży dekoracyjnej, inspiracje modowe i wszystko czego  wspólny mianownik można nazwać gadżetem.',
+    subtitle: 'Uwielbiamy wszelkie techniczne i technologiczne nowinki, pilnie śledzimy pojawiające się na rynku trendy i pomysły, inspirujemy się sztuką nowoczesną, modą i branżą dekoracyjną - kochamy nieoczywiste połączenia i zaskakujące hybrydy. Świeże pomysły i niekonwencjonalne rozwiązania to my!',
     buttonTo: '/onas',
     image: './assets/homepage1.png',
   },
   {
     title: `nasza \n oferta`,
-    subtitle:
-      'Jeśli poszukujesz specjalistów od gadżetów to jesteś w odpowiednim miejscu – doradzamy, wpieramy, poszukujemy i przygotowujemy. Mamy po swojej stronie specjalistów ds. strategii marketingowych, ds. badań rynkowych i grafików. Zerknij do naszej oferty.',
+    subtitle: 'Skuteczna, elastyczna i dopasowana do klienta – doradzamy, wspieramy i opracowujemy, w oparciu o ciągłe poszukiwania nowych i lepszych rozwiązań. Mamy w swoich szeregach specjalistów ds. strategii marketingowych, ds. badań rynkowych, grafików i wizjonerów. Sprawdź nas!',
     buttonTo: '/oferta',
     image: './assets/oferta.png',
     isRight: true,
@@ -17,7 +15,7 @@ export const config = [
   {
     title: `zapraszamy \n do kontaktu`,
     subtitle:
-      'Jeśli poszukujesz specjalistów od gadżetów \n – nie krępuj się! Zadzwoń lub napisz. Jesteśmy do usług!',
+      'Mamy to czego potrzebujesz: skuteczne doradztwo, nieustające wsparcie, zaskakujące pomysły i niezwykłe gadżety. Zadzwoń lub napisz – czekamy w gotowości do działania!',
     buttonTo: '/kontakt',
     image: './assets/contact.png',
   },
@@ -25,6 +23,6 @@ export const config = [
 
 export const main = {
   title: `PROFESJONALNE \n DORADZTWO`,
-  subtitle: 'w zakresie programów lojalnościowych \n oraz wsparcia sprzedaży B2B oraz B2C',
+  subtitle: 'Z przyjemnością podpowiemy Ci, jaki obrać kierunek. Zaprojektujemy i stworzymy najlepszy dla Ciebie program lojalnościowy albo odpowiednio podrasujemy ten, który już posiadasz. Zaproponujemy Ci również konkretne rozwiązania, nieodzowne dla wsparcia sprzedaży b2b oraz b2c.',
   image: './assets/doradztwo.png',
 };

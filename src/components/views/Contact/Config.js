@@ -1,5 +1,5 @@
 export const config = {
   title: 'zapraszamy \n do kontaktu',
-  subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  subtitle: 'Zatem niezależnie od tego, czy potrzebujesz fachowego wsparcia przy wdrażaniu kompleksowych rozwiązań, czy też chciałbyś byśmy zaproponowali Ci jakiś wyjątkowy i niepowtarzalny gadżet lub odświeżyli wizerunek firmy – skontaktuj się z nami. Gwarantujemy nietuzinkowe i skuteczne rozwiązania, świeże i innowacyjne podejście do tematu oraz wsparcie doświadczonych specjalistów.',
   image: './assets/contact.png'
 }

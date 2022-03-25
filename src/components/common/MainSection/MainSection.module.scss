@@ -3,7 +3,7 @@
 .root {
   white-space: pre-line;
   background: $backround-div-color;
-  height: 650px;
+  //height: 650px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@
 }
 @media screen and (max-width: 1200px) {
   .root {
-    height: 400px;
+    //height: 400px;
 
     img {
       height: 400px;
@@ -52,6 +52,9 @@
   .root {
     max-height: 500px;
     height: 100%;
+    .title{
+      text-align: center;
+    }
     img {
       height: 350px;
     }
