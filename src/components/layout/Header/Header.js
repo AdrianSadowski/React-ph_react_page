@@ -16,7 +16,9 @@ const Header = () => {
     setToogleMenu(false);
   };
 
+
   useEffect(() => {
+
     const changeWidth = () => {
       setScreenWidth(window.innerWidth);
     };
@@ -28,8 +30,8 @@ const Header = () => {
     };
   }, []);
   return (
-    <div className="row">
-      <div className="col-lg-7 row">
+    <div className={`row`}>
+      <div className={`row ${styles.topnav}`}>
         <div className={'col-6 ' + styles.logo}>
           <Link onClick={toogleNavFalse} to="/">
             <img src='assets/logo.png' alt="Logo" />
@@ -59,7 +61,6 @@ const Header = () => {
 
         </nav>
       </div>
-      <div className={'col-lg-5 ' + styles.rightnav}></div>
     </div>
   );
 };

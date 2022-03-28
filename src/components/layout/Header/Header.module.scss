@@ -1,26 +1,36 @@
 @import '../../../styles/settings.scss';
 
+
+.topnav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 .root {
   margin: 50px 0;
+  max-width: 650px;
 }
 
 .logo {
   height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  width: 600px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 nav {
   top: 0;
   width: 100%;
   height: 80px;
+  ul{
+    padding: 0;
+  }
   li {
     transition: color 0.3s ease;
-  }
-  li:hover{
-    font-size: 24px;
+    text-align: center;
   }
 }
 
@@ -59,30 +69,63 @@ nav {
 }
 
 @media screen and (max-width: 1200px) {
-  .rightnav {
-    display: none;
+  .logo {
+    width: 400px;
+  }
+  .root {
+    width: 400px;
+  }
+
+}
+@media screen and (max-width: 820px) {
+  .logo {
+    width: 300px;
+  }
+  .root {
+    width: 300px;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 250px;
+  }
+  .root {
+    width: 250px;
+    margin-left: 30px;
   }
 
 }
 
 @media screen and (max-width: 576px) {
+  .topnav{
+    justify-content: flex-start;
+  }
+  .root{
+    margin: 0;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  
+  }
+  .logo{
+    width: 150px;
+    margin: 50px 0;
+  }
   .list {
     flex-direction: column;
     height: auto;
     padding: 10px 0;
-    position: absolute;
     width: 200px;
     height: 165px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
     text-align: center;
     background: none;
-    margin-top: 45px;
-    li:hover{
-      font-size: 40px;
-    }
+    position: absolute;
+    top: 20%;
+    left: -10%;
+
 
   }
 
@@ -101,8 +144,5 @@ nav {
     display: block;
   }
 
-  .logo img {
-    padding-left: 140px;
-  }
 
 }
