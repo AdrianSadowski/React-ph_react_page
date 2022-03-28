@@ -51,3 +51,13 @@
     }
   }
 }
+
+@media  (min-width: 1200px) {
+  .root{
+    justify-content: center;
+    .logo, .phone, .companyInfo {
+      padding: 0 80px;
+    }
+  }
+  
+}
