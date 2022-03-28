@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
   width: 100%;
   margin-top: 100px;
   text-align: center;
@@ -13,9 +14,12 @@
   .description-container {
     width: 49%;
     .description-container-side {
-      margin-left: 60px;
       text-align: left;
-      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 650px;
+      
     }
 
     .title {
@@ -46,7 +50,7 @@
       p {
         margin-top: 8px;
       }
-      &:hover{
+      &:hover {
         background: $button-background-hover;
         font-weight: bold;
       }
@@ -61,12 +65,55 @@
       z-index: 1;
       height: 320px;
       position: relative;
+      // display: flex;
+      // justify-content: flex-end;
+      // align-content: center;
+      img {
+        z-index: 2;
+        bottom: 140px;
+        left: 60px;
+        position: relative;
+      }
     }
-    img {
-      z-index: 2;
-      bottom: 140px;
-      left: 60px;
-      position: relative;
+  }
+}
+
+
+@media screen and (min-width: 1900px) and (max-width: 2299px) {
+  .default-section.left {
+    .image-container {
+      img {
+        margin-left: 15%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 2300px) and (max-width: 2499px) {
+  .default-section.left {
+    .image-container {
+      img {
+        margin-left: 25%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 2500px) {
+  .default-section.left {
+    .image-container {
+      img {
+        margin-left: 30%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1500px) {
+  .default-section.left {
+    .image-container {
+      .background {
+        img {
+          left: 400;
+        }
+      }
     }
   }
 }
@@ -74,8 +121,10 @@
 @media screen and (max-width: 1290px) {
   .default-section.left {
     .image-container {
-      img {
-        left: 0;
+      .background {
+        img {
+          left: 0;
+        }
       }
     }
   }
@@ -84,16 +133,21 @@
   .default-section.left {
     height: 100%;
     text-align: left;
-    margin-top: 0;
+    margin-top: 20px;
     .image-container {
-      img {
-        height: 100%;
-        bottom: 0;
-        left: 0;
+      .background {
+        img {
+          height: 100%;
+          bottom: 0;
+          left: 60px;
+        }
       }
     }
 
     .description-container {
+      .description-container-side{
+        width: 400px;
+      }
       .title {
         font-size: 45px;
         line-height: 55px;
@@ -113,8 +167,9 @@
     .description-container {
       max-width: 500px;
       width: 80%;
-      
+
       .description-container-side {
+        width: 100%;
         text-align: center;
         margin-left: 0;
       }
@@ -135,12 +190,11 @@
     height: 100% !important;
   }
 
-    .default-section.left {
-      .description-container {
-        width: 90%;
-      }
+  .default-section.left {
+    .description-container {
+      width: 90%;
     }
-  
+  }
 }
 
 /// another site
@@ -157,10 +211,13 @@
 
   .description-container {
     width: 49%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
     .description-container-side {
-      margin-left: 100px;
+      width: 650px;
       text-align: left;
-      
     }
 
     .title {
@@ -191,7 +248,7 @@
       p {
         margin-top: 8px;
       }
-      &:hover{
+      &:hover {
         background: $button-background-hover;
         font-weight: bold;
       }
@@ -216,10 +273,29 @@
   }
 }
 
+@media screen and (min-width: 2500px) {
+  .default-section.right {
+    .image-container {
+      img {
+        margin-right: 25%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1900px) {
+  .default-section.right {
+    .image-container {
+      img {
+        margin-right: 15%;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1290px) {
   .default-section.right {
-    .description-container{
-      .description-container-side{
+    .description-container {
+      .description-container-side {
         margin-left: auto;
         max-width: 800px;
       }
@@ -235,7 +311,7 @@
   .default-section.right {
     height: 400px;
     text-align: left;
-    margin-top: 0;
+    margin-top: 20px;
     .image-container {
       img {
         height: 350px;
@@ -245,8 +321,8 @@
     }
 
     .description-container {
-      .description-container-side{
-        margin-left: 40px;
+      .description-container-side {
+        width: 400px;
       }
       .title {
         font-size: 45px;
@@ -268,6 +344,7 @@
       width: 80%;
 
       .description-container-side {
+        width: 100%;
         margin-left: 0;
         text-align: center;
       }
@@ -281,8 +358,6 @@
       display: none;
     }
   }
-
-  
 }
 
 @media screen and (max-width: 576px) {

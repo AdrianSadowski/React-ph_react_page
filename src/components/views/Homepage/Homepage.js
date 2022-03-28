@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 
 import MainSection from '../../common/MainSection/MainSection';
 import {config, main} from './config.js';
-import DefaultSection from '../../common/DefaultSectionTEST/DefaultSection';
+import DefaultSection from '../../common/DefaultSection/DefaultSection';
 
 const Homepage = () => {
   useEffect(() => {
